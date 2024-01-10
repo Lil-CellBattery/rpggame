@@ -1,0 +1,79 @@
+
+import java.awt.Color;
+import java.awt.Dimension;
+import javax.swing.JPanel;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author User
+ */
+public class GamePanel extends JPanel implements Runnable{
+//SCREEN SETTINGS
+final int originalTileSize = 16; // 32x32
+final int scale = 5;
+
+final int tileSize = originalTileSize * scale; //
+final int maxScreenCol = 18;
+final int maxScreenRow = 14;
+final int screenWidth = tileSize * maxScreenCol; // 768 pixels
+final int screenHeight = tileSize * maxScreenRow; //576 pixels
+    
+
+Thread gameThread;
+
+//game state
+public int gameState;
+public final int titleState = 0;
+
+public GamePanel()
+{
+ this.setPreferredSize(new Dimension(screenWidth, screenHeight));
+ this.setBackground(Color.black);
+ this.setDoubleBuffered(true); //improve rendering performance
+ 
+ 
+}
+public void setupGame()
+{
+    aSetter.setObject();
+    aSetter.setNPC();
+    playMusic(0);
+    gameState = titleState;
+}
+public void startGameThread(){
+    gameThread = new Thread(this);
+    gameThread.start();
+}
+
+
+    @Override
+    public void run() {
+        
+    }
+
+
+//title screen
+if(gameState == titleState){
+    
+}
+else{
+    
+}
+
+
+//title name
+public void drawTitleScreen(){
+    
+g2.setFont(g2.getFont().deriveFont(Font,BOLD,96F));
+}
+
+
+
+
+}
